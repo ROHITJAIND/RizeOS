@@ -14,7 +14,7 @@ const Profile = () => {
   });
   const [resumeFile, setResumeFile] = useState(null);
 
-  // Function to fetch the user's profile data
+  
   const loadProfile = async () => {
     if (localStorage.token) {
       setAuthToken(localStorage.token);
@@ -46,7 +46,7 @@ const Profile = () => {
     setResumeFile(e.target.files[0]);
   };
 
-  // Logic to upload the PDF and extract skills
+  
   const handleExtractSkills = async () => {
     if (!resumeFile) {
       alert('Please select a resume PDF file first.');
@@ -73,13 +73,13 @@ const Profile = () => {
     }
   };
 
-  // Save profile logic
+  
   const onSave = async (e) => {
     e.preventDefault();
     try {
       await axios.put('http://localhost:5001/api/profile/update', formData);
       setEditMode(false);
-      loadProfile(); // Reload profile to show updated data
+      loadProfile(); 
       alert('Profile updated successfully!');
     } catch (err) {
       console.error(err.response.data);
@@ -110,7 +110,7 @@ const Profile = () => {
         <hr />
 
         {!editMode ? (
-          // --- VIEW MODE ---
+          
           <div>
             <p>
               <strong>Name:</strong> {profile.name}
@@ -130,7 +130,7 @@ const Profile = () => {
             </p>
           </div>
         ) : (
-          // --- EDIT MODE ---
+          
           <form onSubmit={onSave}>
             <div className="form-group">
               <label>Name:</label>
@@ -161,7 +161,7 @@ const Profile = () => {
             </div>
             <hr />
 
-            {/* AI Section */}
+            
             <h4>AI Skill Extraction</h4>
             <div className="form-group">
               <label>Upload Resume (PDF):</label>
@@ -189,14 +189,14 @@ const Profile = () => {
                 value={
                   Array.isArray(formData.skills) ? formData.skills.join(',') : ''
                 }
-                // --- THIS IS THE CORRECTED LINE ---
+                
                 onChange={(e) =>
                   setFormData({
                     ...formData,
                     skills: e.target.value
-                      .split(',') // 1. Split the string into an array
-                      .map(skill => skill.trim()) // 2. Remove whitespace from each skill
-                      .filter(skill => skill !== '') // 3. Remove any empty entries
+                      .split(',') 
+                      .map(skill => skill.trim()) 
+                      .filter(skill => skill !== '') 
                   })
                 }
               />

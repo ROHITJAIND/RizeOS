@@ -2,8 +2,6 @@
 
 A full-stack web application inspired by platforms like LinkedIn and Upwork, enhanced with modern AI and Web3 blockchain features. This project was built as part of the RizeOS Core Team Internship assessment.
 
-**Live Demo:** **[https://YOUR_VERCEL_APP_LINK.vercel.app/](https://YOUR_VERCEL_APP_LINK.vercel.app/)**
-
 ---
 
 ## 🚀 Project Overview
@@ -107,20 +105,18 @@ VITE_ADMIN_WALLET_ADDRESS=YOUR_METAMASK_WALLET_ADDRESS
 
 - Open one terminal and run the backend server:
   ```bash
-  cd server
-  npm run dev
+    cd server
+    nodemon server.js
   ```
 - Open a second terminal and run the frontend client:
-  `bash
+  ```bash
     cd client
     npm run dev
-    `
+  ```
   The frontend will be available at `http://localhost:5173`.
 
 ---
 
-## 👤 Author
+### Drive Link :
 
-- **[Your Name]**
-- GitHub: [@your-github-username](https://github.com/your-github-username)
-- LinkedIn: [your-linkedin-profile](https://linkedin.com/in/your-profile)
+https://drive.google.com/drive/folders/1LyEF_SLqPNnTtbifund8Snj5GoRhuqTl?usp=sharing

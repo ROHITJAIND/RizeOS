@@ -14,7 +14,7 @@ const JobCard = ({ job }) => {
     }
     
     setIsLoading(true);
-    // Ensure the auth token is set for the API request
+    
     if (localStorage.token) {
         setAuthToken(localStorage.token);
     }
@@ -41,7 +41,7 @@ const JobCard = ({ job }) => {
         ))}
       </div>
 
-      {/* --- NEW: Match Score Section --- */}
+      
       {isAuthenticated && (
         <div style={{ marginTop: '1rem', borderTop: '1px solid #eee', paddingTop: '1rem' }}>
           {!match ? (

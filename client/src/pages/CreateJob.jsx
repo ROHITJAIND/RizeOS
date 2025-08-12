@@ -37,13 +37,13 @@ const CreateJob = () => {
       
       const tx = await signer.sendTransaction({
         to: import.meta.env.VITE_ADMIN_WALLET_ADDRESS,
-        value: ethers.parseEther("0.001") // <-- UPDATED to the correct fee
+        value: ethers.parseEther("0.001") 
       });
       
       await tx.wait();
 
-      // Updated alert message to show "POL"
-      alert("Payment of 0.001 POL successful!"); // <-- UPDATED to POL
+      
+      alert("Payment of 0.001 POL successful!"); 
       setPaymentSuccess(true);
 
     } catch (error) {
@@ -56,7 +56,7 @@ const CreateJob = () => {
     }
   };
 
-  // --- Form Submission Logic ---
+  
   const onSubmit = async (e) => {
     e.preventDefault();
 
