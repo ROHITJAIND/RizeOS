@@ -117,6 +117,6 @@ VITE_ADMIN_WALLET_ADDRESS=YOUR_METAMASK_WALLET_ADDRESS
 
 ---
 
-### Drive Link :
+### Drive Link:
 
 https://drive.google.com/drive/folders/1LyEF_SLqPNnTtbifund8Snj5GoRhuqTl?usp=sharing
