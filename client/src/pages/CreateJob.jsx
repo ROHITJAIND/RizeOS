@@ -69,7 +69,7 @@ const CreateJob = () => {
       setAuthToken(localStorage.token);
     }
     try {
-      await axios.post('/api/jobs/post', formData);
+      await axios.post('http://localhost:5001/api/jobs/post', formData);
       alert('Job posted successfully!');
       navigate('/jobs');
     } catch (err) {
