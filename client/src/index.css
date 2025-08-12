@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* === Professional Base Styles (Cool Light Theme) === */
+
+:root {
+  /* Font & Base */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+  --text-color: #2c3e50;         /* Dark, soft blue-gray for text (softer than black) */
+  --heading-color: #34495e;     /* A slightly darker shade for headings */
+  --background-color: #f4f7f9;   /* Light, cool gray-blue background */
+  --surface-color: #ffffff;       /* White for cards, inputs, and other surfaces */
+  --border-color: #e1e8ed;       /* Subtle border color */
+  
+  /* Transitions */
+  --transition-speed: 0.25s;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Default button style is the primary action button */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: #ffffff; /* White text on primary button */
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: all var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* A secondary button style for less prominent actions */
+button.secondary {
+    background-color: var(--surface-color);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+}
+
+button.secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

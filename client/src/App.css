@@ -1,0 +1,275 @@
+/* === FONT & GLOBAL STYLES === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  /* Redefined color palette for a more modern feel */
+  --primary-color: #007aff; /* A more standard, vibrant blue */
+  --primary-hover: #0056b3;
+  --primary-rgb: 0, 122, 255; /* For use in rgba() for glows */
+  
+  --background-color: #f8f9fa;
+  --card-background: #ffffff;
+  --text-color: #212529;
+  --muted-text-color: #6c757d;
+  --border-color: #dee2e6;
+  
+  --border-radius: 12px; /* Slightly larger radius for a softer look */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 7px 14px rgba(0, 0, 0, 0.07), 0 3px 6px rgba(0, 0, 0, 0.08);
+  
+  --transition-speed: 0.3s;
+}
+
+/* === DARK MODE THEME === */
+[data-theme='dark'] {
+  --background-color: #121212;
+  --card-background: #1e1e1e;
+  --text-color: #e0e0e0;
+  --muted-text-color: #888;
+  --border-color: #333;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+
+  /* === KEY CHANGE FOR CENTERING === */
+  /* Use Flexbox to center the main container vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box; /* Ensures padding doesn't add to the total height/width */
+  -webkit-font-smoothing: antialiased; /* Crisper text rendering */
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%; /* Ensure container takes up available space up to max-width */
+  margin: 0; /* Margin is now handled by the body's flexbox */
+  padding: 0 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: var(--card-background);
+  padding: 1rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a, .nav-links button {
+  color: var(--muted-text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: color var(--transition-speed);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width .2s ease;
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-color);
+}
+
+
+.nav-links a:hover, .nav-links button:hover {
+  color: var(--primary-color);
+}
+
+/* === FORM CONTAINER === */
+.form-container {
+  background: var(--card-background);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 450px;
+  margin: 2rem auto;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--muted-text-color);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+  box-sizing: border-box; /* Consistent sizing */
+}
+
+/* Enhanced focus state for inputs */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* === BUTTONS === */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn:disabled {
+  background-color: var(--muted-text-color);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+
+/* === CARDS === */
+.card {
+  background: var(--card-background);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+  box-shadow: var(--box-shadow);
+  /* Replaced simple border with a more subtle gradient line */
+  border-left: 4px solid;
+  border-image: linear-gradient(to top, var(--primary-hover), var(--primary-color)) 1;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.skill-tag {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.jobs-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem; 
+}
+
+@media (max-width: 768px) {
+  .jobs-grid-container {
+    grid-template-columns: 1fr;
+  }
+}
