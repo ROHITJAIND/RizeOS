@@ -118,8 +118,3 @@ VITE_ADMIN_WALLET_ADDRESS=YOUR_METAMASK_WALLET_ADDRESS
 
 ---
 
-## 👤 Author
-
-- **[Your Name]**
-- GitHub: [@your-github-username](https://github.com/your-github-username)
-- LinkedIn: [your-linkedin-profile](https://linkedin.com/in/your-profile)
