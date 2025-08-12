@@ -2,7 +2,7 @@
 
 [build]
   # This is the directory Netlify will build from
-  base = "client/"
+  base = "/"
   # This command builds your React app
   command = "npm run build"
   # This is the directory that contains the built frontend
