@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => {
     const user = { email, password };
 
     try {
-      const res = await axios.post('http://localhost:5001/api/auth/login', user);
+      const res = await axios.post('/api/auth/login', user);
       
       onLogin(res.data.token);
       

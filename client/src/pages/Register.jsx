@@ -28,7 +28,7 @@ const Register = () => {
       };
       const body = JSON.stringify(newUser);
       const res = await axios.post(
-        'http://localhost:5001/api/auth/register',
+        '/api/auth/register',
         body,
         config
       );
