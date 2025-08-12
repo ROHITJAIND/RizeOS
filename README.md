@@ -2,7 +2,6 @@
 
 A full-stack web application inspired by platforms like LinkedIn and Upwork, enhanced with modern AI and Web3 blockchain features. This project was built as part of the RizeOS Core Team Internship assessment.
 
-**Live Demo:** **[https://YOUR_VERCEL_APP_LINK.vercel.app/](https://YOUR_VERCEL_APP_LINK.vercel.app/)**
 
 ---
 
