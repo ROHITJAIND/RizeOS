@@ -35,12 +35,6 @@ const CreateJob = () => {
       
       const network = await provider.getNetwork();
       
-      // if (network.chainId !== 80001) { // Checks for Amoy network
-      //     alert("Please switch to the Polpppppygon Amoy network in MetaMask.");
-      //     throw new Error("Wrong network");
-      // }
-
-      // Transaction details with the correct fee amount
       const tx = await signer.sendTransaction({
         to: import.meta.env.VITE_ADMIN_WALLET_ADDRESS,
         value: ethers.parseEther("0.001") // <-- UPDATED to the correct fee
@@ -75,7 +69,7 @@ const CreateJob = () => {
       setAuthToken(localStorage.token);
     }
     try {
-      await axios.post('/api/jobs/post', formData);
+      await axios.post('http://localhost:5001/api/jobs/post', formData);
       alert('Job posted successfully!');
       navigate('/jobs');
     } catch (err) {

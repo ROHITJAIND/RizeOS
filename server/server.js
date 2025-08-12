@@ -30,4 +30,7 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/profile', require('./routes/profile'));
 app.use('/api/jobs', require('./routes/jobs'));
 app.use('/api/ai', require('./routes/ai'));
-module.exports = app;
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
