@@ -20,7 +20,7 @@ const Profile = () => {
       setAuthToken(localStorage.token);
     }
     try {
-      const res = await axios.get('/.netlify/functions/api/profile/me');
+      const res = await axios.get('http://localhost:5001/api/profile/me');
       setProfile(res.data);
       setFormData({
         name: res.data.name || '',
@@ -60,7 +60,7 @@ const Profile = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       };
       const res = await axios.post(
-        '/.netlify/functions/api/ai/upload-resume',
+        'http://localhost:5001/api/ai/upload-resume',
         fileFormData,
         config
       );
@@ -77,7 +77,7 @@ const Profile = () => {
   const onSave = async (e) => {
     e.preventDefault();
     try {
-      await axios.put('/.netlify/functions/api/profile/update', formData);
+      await axios.put('http://localhost:5001/api/profile/update', formData);
       setEditMode(false);
       loadProfile(); // Reload profile to show updated data
       alert('Profile updated successfully!');

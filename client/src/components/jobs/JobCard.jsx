@@ -20,7 +20,7 @@ const JobCard = ({ job }) => {
     }
 
     try {
-      const res = await axios.get(`/.netlify/functions/api/ai/match-score/${job._id}`);
+      const res = await axios.get(`http://localhost:5001/api/ai/match-score/${job._id}`);
       setMatch(res.data);
     } catch (err) {
       console.error(err);

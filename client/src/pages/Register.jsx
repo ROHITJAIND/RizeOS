@@ -28,7 +28,7 @@ const Register = () => {
       };
       const body = JSON.stringify(newUser);
       const res = await axios.post(
-        '/.netlify/functions/api/auth/register',
+        'http://localhost:5001/api/auth/register',
         body,
         config
       );
