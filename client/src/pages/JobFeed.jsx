@@ -12,7 +12,7 @@ const JobFeed = () => {
     const fetchJobs = async () => {
       setLoading(true);
       try {
-        const url = `http://localhost:5001/api/jobs?skill=${filter}`;
+        const url = `/.netlify/functions/api/jobs?skill=${filter}`;
         const res = await axios.get(url);
         setJobs(res.data);
       } catch (err) {
