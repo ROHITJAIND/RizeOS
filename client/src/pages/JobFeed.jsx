@@ -8,7 +8,7 @@ const JobFeed = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    // ... (your useEffect fetching logic remains exactly the same)
+    
     const fetchJobs = async () => {
       setLoading(true);
       try {
@@ -45,7 +45,7 @@ const JobFeed = () => {
       {loading ? (
         <p style={{ textAlign: 'center' }}>Loading jobs...</p>
       ) : jobs.length > 0 ? (
-        // --- THIS IS THE UPDATED PART ---
+      
         <div className="jobs-grid-container">
           {jobs.map(job => (
             <JobCard key={job._id} job={job} />
